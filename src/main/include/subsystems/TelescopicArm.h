@@ -13,6 +13,13 @@
 
 #include "Constants.h"
 
+constexpr double TELESCOPIC_ARM_UP_SPEED = 0.55;
+constexpr double TELESCOPIC_ARM_DOWN_SPEED = 0.35;
+
+/**
+ * @brief The telescopic arm mechanism of the robot.
+ *
+ */
 class TelescopicArm : public frc2::SubsystemBase {
  public:
   /**

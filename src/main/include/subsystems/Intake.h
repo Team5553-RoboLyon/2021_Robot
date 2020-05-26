@@ -13,6 +13,13 @@
 
 #include "Constants.h"
 
+constexpr double INTAKE_OPENED_SPEED = 0.6;
+constexpr double INTAKE_CLOSED_SPEED = 0.2;
+
+/**
+ * @brief The intake mechanism of the robot.
+ *
+ */
 class Intake : public frc2::SubsystemBase {
  public:
   enum class IntakePosition { kOpened, kClosed };

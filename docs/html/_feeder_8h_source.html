@@ -84,25 +84,28 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Constants.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_feeder.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_feeder.html">Feeder</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="class_feeder.html#a6e19de83bb7db588512f6ca8772a944e">Feeder</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#ad7eede13eafda0217318226560114e05">Activate</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#a41851d7e8f5deb4a3fa1b4d8f39df702">UnBlock</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#af912ba09fa5d94372cb8ad45d417dcb2">Stop</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_FeederMotor{FEEDER_MOTOR};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_ConveyorMotor{CONVEYOR_MOTOR};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;constexpr <span class="keywordtype">double</span> FEEDER_SPEED = 0.7;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;constexpr <span class="keywordtype">double</span> CONVEYOR_SPEED = 0.4;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_feeder.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_feeder.html">Feeder</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="class_feeder.html#a6e19de83bb7db588512f6ca8772a944e">Feeder</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#ad7eede13eafda0217318226560114e05">Activate</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#a41851d7e8f5deb4a3fa1b4d8f39df702">UnBlock</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_feeder.html#af912ba09fa5d94372cb8ad45d417dcb2">Stop</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_FeederMotor{FEEDER_MOTOR};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_ConveyorMotor{CONVEYOR_MOTOR};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_feeder_html_ad7eede13eafda0217318226560114e05"><div class="ttname"><a href="class_feeder.html#ad7eede13eafda0217318226560114e05">Feeder::Activate</a></div><div class="ttdeci">void Activate()</div><div class="ttdoc">Turn the feeder motor on to feed the shooter.</div></div>
 <div class="ttc" id="aclass_feeder_html_af912ba09fa5d94372cb8ad45d417dcb2"><div class="ttname"><a href="class_feeder.html#af912ba09fa5d94372cb8ad45d417dcb2">Feeder::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the feeder motor.</div></div>
 <div class="ttc" id="aclass_feeder_html_a41851d7e8f5deb4a3fa1b4d8f39df702"><div class="ttname"><a href="class_feeder.html#a41851d7e8f5deb4a3fa1b4d8f39df702">Feeder::UnBlock</a></div><div class="ttdeci">void UnBlock()</div><div class="ttdoc">Set the motor feeder in reverse direction to unblock power cells.</div></div>
-<div class="ttc" id="aclass_feeder_html"><div class="ttname"><a href="class_feeder.html">Feeder</a></div><div class="ttdef"><b>Definition:</b> Feeder.h:15</div></div>
+<div class="ttc" id="aclass_feeder_html"><div class="ttname"><a href="class_feeder.html">Feeder</a></div><div class="ttdoc">The feeder mechanism of the robot.</div><div class="ttdef"><b>Definition:</b> Feeder.h:22</div></div>
 <div class="ttc" id="aclass_feeder_html_a6e19de83bb7db588512f6ca8772a944e"><div class="ttname"><a href="class_feeder.html#a6e19de83bb7db588512f6ca8772a944e">Feeder::Feeder</a></div><div class="ttdeci">Feeder()</div><div class="ttdoc">Construct a new Feeder object.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

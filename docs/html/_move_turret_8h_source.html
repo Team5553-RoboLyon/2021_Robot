@@ -84,25 +84,30 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;subsystems/Turret.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_move_turret.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_move_turret.html">MoveTurret</a> : <span class="keyword">public</span> frc2::CommandHelper&lt;frc2::CommandBase, MoveTurret&gt; {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="class_move_turret.html">MoveTurret</a>(<a class="code" href="class_turret.html">Turret</a>* pturret, <span class="keywordtype">double</span> angle);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> Initialize() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> Execute() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> End(<span class="keywordtype">bool</span> interrupted) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">bool</span> IsFinished() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="class_turret.html">Turret</a>* m_pTurret;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">double</span> m_Angle;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_move_turret.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_move_turret.html">MoveTurret</a> : <span class="keyword">public</span> frc2::CommandHelper&lt;frc2::CommandBase, MoveTurret&gt; {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="class_move_turret.html#a9e15fd733cf16aa95f3f81748b9d6f78">MoveTurret</a>(<a class="code" href="class_turret.html">Turret</a>* pturret, <span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_move_turret.html#a88779fbe6bd8b8a4f69a7e86cca8de14">Initialize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_move_turret.html#a4189b96121897a67246d099df653db0a">Execute</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_move_turret.html#a55c85e97b49957bc949df060ce14dc6b">End</a>(<span class="keywordtype">bool</span> interrupted) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_move_turret.html#aff1058bc2f41bb6399e9d73896d9b8b1">IsFinished</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="class_turret.html">Turret</a>* m_pTurret;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> m_Angle;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_turret_html"><div class="ttname"><a href="class_turret.html">Turret</a></div><div class="ttdef"><b>Definition:</b> Turret.h:16</div></div>
-<div class="ttc" id="aclass_move_turret_html"><div class="ttname"><a href="class_move_turret.html">MoveTurret</a></div><div class="ttdef"><b>Definition:</b> MoveTurret.h:15</div></div>
+<div class="ttc" id="aclass_move_turret_html_a88779fbe6bd8b8a4f69a7e86cca8de14"><div class="ttname"><a href="class_move_turret.html#a88779fbe6bd8b8a4f69a7e86cca8de14">MoveTurret::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdoc">Enable the PID control of the turret and set the new setpoint (aka the angle)</div></div>
+<div class="ttc" id="aclass_move_turret_html_a9e15fd733cf16aa95f3f81748b9d6f78"><div class="ttname"><a href="class_move_turret.html#a9e15fd733cf16aa95f3f81748b9d6f78">MoveTurret::MoveTurret</a></div><div class="ttdeci">MoveTurret(Turret *pturret, double angle)</div><div class="ttdoc">Construct a new Move Turret object.</div></div>
+<div class="ttc" id="aclass_move_turret_html_a4189b96121897a67246d099df653db0a"><div class="ttname"><a href="class_move_turret.html#a4189b96121897a67246d099df653db0a">MoveTurret::Execute</a></div><div class="ttdeci">void Execute() override</div><div class="ttdoc">Do nothing.</div></div>
+<div class="ttc" id="aclass_move_turret_html_a55c85e97b49957bc949df060ce14dc6b"><div class="ttname"><a href="class_move_turret.html#a55c85e97b49957bc949df060ce14dc6b">MoveTurret::End</a></div><div class="ttdeci">void End(bool interrupted) override</div><div class="ttdoc">Disable the PID control of the turret and stop its motor.</div></div>
+<div class="ttc" id="aclass_turret_html"><div class="ttname"><a href="class_turret.html">Turret</a></div><div class="ttdoc">The turret mechanism of the robot.</div><div class="ttdef"><b>Definition:</b> Turret.h:30</div></div>
+<div class="ttc" id="aclass_move_turret_html"><div class="ttname"><a href="class_move_turret.html">MoveTurret</a></div><div class="ttdoc">Move the turret to a specified angle.</div><div class="ttdef"><b>Definition:</b> MoveTurret.h:19</div></div>
+<div class="ttc" id="aclass_move_turret_html_aff1058bc2f41bb6399e9d73896d9b8b1"><div class="ttname"><a href="class_move_turret.html#aff1058bc2f41bb6399e9d73896d9b8b1">MoveTurret::IsFinished</a></div><div class="ttdeci">bool IsFinished() override</div><div class="ttdoc">Return if the turret has reached its setpoint.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

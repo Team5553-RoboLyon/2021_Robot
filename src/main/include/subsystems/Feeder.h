@@ -12,6 +12,13 @@
 
 #include "Constants.h"
 
+constexpr double FEEDER_SPEED = 0.7;
+constexpr double CONVEYOR_SPEED = 0.4;
+
+/**
+ * @brief The feeder mechanism of the robot.
+ *
+ */
 class Feeder : public frc2::SubsystemBase {
  public:
   /**

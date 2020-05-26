@@ -69,6 +69,11 @@ $(function() {
 <div class="title">Turret Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The turret mechanism of the robot.  
+ <a href="class_turret.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_turret_8h_source.html">Turret.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Turret:</div>
 <div class="dyncontent">
@@ -79,8 +84,11 @@ Inheritance diagram for Turret:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a716b97b5618cc59c9b095954f92fd47c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a716b97b5618cc59c9b095954f92fd47c">Turret</a> ()</td></tr>
-<tr class="memdesc:a716b97b5618cc59c9b095954f92fd47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_turret.html">Turret</a> object.  <a href="class_turret.html#a716b97b5618cc59c9b095954f92fd47c">More...</a><br /></td></tr>
+<tr class="memdesc:a716b97b5618cc59c9b095954f92fd47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object.  <a href="class_turret.html#a716b97b5618cc59c9b095954f92fd47c">More...</a><br /></td></tr>
 <tr class="separator:a716b97b5618cc59c9b095954f92fd47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6438eb6ae5ec2be9346b5ad774ace2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#ae6438eb6ae5ec2be9346b5ad774ace2d">Periodic</a> () override</td></tr>
+<tr class="memdesc:ae6438eb6ae5ec2be9346b5ad774ace2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called periodically by the CommandScheduler.  <a href="class_turret.html#ae6438eb6ae5ec2be9346b5ad774ace2d">More...</a><br /></td></tr>
+<tr class="separator:ae6438eb6ae5ec2be9346b5ad774ace2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56d18e7baf5478733a3a20aea26e65b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a56d18e7baf5478733a3a20aea26e65b9">UseOutput</a> (double output, double setpoint) override</td></tr>
 <tr class="memdesc:a56d18e7baf5478733a3a20aea26e65b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the PID calculated value to move the turret to the setpoint.  <a href="class_turret.html#a56d18e7baf5478733a3a20aea26e65b9">More...</a><br /></td></tr>
 <tr class="separator:a56d18e7baf5478733a3a20aea26e65b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,6 +98,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adcf01bf4321be2f479cb790055cdf08d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#adcf01bf4321be2f479cb790055cdf08d">SetClampedSetpoint</a> (double setpoint)</td></tr>
 <tr class="memdesc:adcf01bf4321be2f479cb790055cdf08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the turret setpoint clamped within the acceptable angles.  <a href="class_turret.html#adcf01bf4321be2f479cb790055cdf08d">More...</a><br /></td></tr>
 <tr class="separator:adcf01bf4321be2f479cb790055cdf08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2cc8cb259a7ac767726a3ef46ad658"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a7e2cc8cb259a7ac767726a3ef46ad658">EnableAutoAdjust</a> ()</td></tr>
+<tr class="memdesc:a7e2cc8cb259a7ac767726a3ef46ad658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the automatic adjustment of the turret with the powerport.  <a href="class_turret.html#a7e2cc8cb259a7ac767726a3ef46ad658">More...</a><br /></td></tr>
+<tr class="separator:a7e2cc8cb259a7ac767726a3ef46ad658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1d257a7fd6673862b4d7c0385407d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#ada1d257a7fd6673862b4d7c0385407d7">DisableAutoAdjust</a> ()</td></tr>
+<tr class="memdesc:ada1d257a7fd6673862b4d7c0385407d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the automatic adjustment of the turret with the powerport.  <a href="class_turret.html#ada1d257a7fd6673862b4d7c0385407d7">More...</a><br /></td></tr>
+<tr class="separator:ada1d257a7fd6673862b4d7c0385407d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2bc933af7c8d11aa082039226453ea0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#aa2bc933af7c8d11aa082039226453ea0">Stop</a> ()</td></tr>
 <tr class="memdesc:aa2bc933af7c8d11aa082039226453ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the turret motor.  <a href="class_turret.html#aa2bc933af7c8d11aa082039226453ea0">More...</a><br /></td></tr>
 <tr class="separator:aa2bc933af7c8d11aa082039226453ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,7 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abd683a92204aa8fe9c80810cc3862322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the turret to the right at a determined speed.  <a href="class_turret.html#abd683a92204aa8fe9c80810cc3862322">More...</a><br /></td></tr>
 <tr class="separator:abd683a92204aa8fe9c80810cc3862322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The turret mechanism of the robot. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a716b97b5618cc59c9b095954f92fd47c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a716b97b5618cc59c9b095954f92fd47c">&#9670;&nbsp;</a></span>Turret()</h2>
 
@@ -116,11 +132,51 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="class_turret.html">Turret</a> object. </p>
+<p>Construct a new <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada1d257a7fd6673862b4d7c0385407d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1d257a7fd6673862b4d7c0385407d7">&#9670;&nbsp;</a></span>DisableAutoAdjust()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Turret::DisableAutoAdjust </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the automatic adjustment of the turret with the powerport. </p>
+<p>Disables the PID control. Sets motor to zero. </p>
+
+</div>
+</div>
+<a id="a7e2cc8cb259a7ac767726a3ef46ad658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e2cc8cb259a7ac767726a3ef46ad658">&#9670;&nbsp;</a></span>EnableAutoAdjust()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Turret::EnableAutoAdjust </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable the automatic adjustment of the turret with the powerport. </p>
+<p>Just call this method once to enable the automatic adjustment. Then, the <a class="el" href="class_turret.html#ae6438eb6ae5ec2be9346b5ad774ace2d" title="This method is called periodically by the CommandScheduler.">Periodic()</a> method will periodically adjust the turret based on vision processing inputs. </p>
+
+</div>
+</div>
 <a id="ab95c4267f2a0580eb110eff315bab286"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab95c4267f2a0580eb110eff315bab286">&#9670;&nbsp;</a></span>GetMeasurement()</h2>
 
@@ -145,7 +201,35 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the turret angle in degrees. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_turret.html">Turret</a> angle in degrees </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> angle in degrees </dd></dl>
+
+</div>
+</div>
+<a id="ae6438eb6ae5ec2be9346b5ad774ace2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6438eb6ae5ec2be9346b5ad774ace2d">&#9670;&nbsp;</a></span>Periodic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Turret::Periodic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is called periodically by the CommandScheduler. </p>
+<p>AutoAdjust the turret if enabled. </p>
 
 </div>
 </div>

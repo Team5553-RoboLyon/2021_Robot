@@ -85,29 +85,32 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Constants.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_telescopic_arm.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_telescopic_arm.html">TelescopicArm</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_telescopic_arm.html#aa1900de7062644bf083eb398601d58bf">TelescopicArm</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#ace4f2793ecd659d0d9a549bb4c80a6b5">ResetEncoder</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_telescopic_arm.html#a57bb251235ad6c2c366c0f6d477fbaf6">GetEncodeur</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;constexpr <span class="keywordtype">double</span> TELESCOPIC_ARM_UP_SPEED = 0.55;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;constexpr <span class="keywordtype">double</span> TELESCOPIC_ARM_DOWN_SPEED = 0.35;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_telescopic_arm.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_telescopic_arm.html">TelescopicArm</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="class_telescopic_arm.html#aa1900de7062644bf083eb398601d58bf">TelescopicArm</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#ace4f2793ecd659d0d9a549bb4c80a6b5">ResetEncoder</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#accba4517fec94897c0633e73c83cd410">GoUp</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#a857367b88c813789e49118ea69b99755">GoDown</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#aa7f29ed657ad10e22f69a67afa5867d0">Stop</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#ad55b5f7585c17b860fdcf80f48c9979e">ResistGravity</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  frc::VictorSP m_Motor{TELESCOPIC_ARM_MOTOR};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  frc::DutyCycleEncoder m_Encoder{TELESCOPIC_ARM_ENCODER};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_telescopic_arm.html#a57bb251235ad6c2c366c0f6d477fbaf6">GetEncodeur</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#accba4517fec94897c0633e73c83cd410">GoUp</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#a857367b88c813789e49118ea69b99755">GoDown</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#aa7f29ed657ad10e22f69a67afa5867d0">Stop</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_telescopic_arm.html#ad55b5f7585c17b860fdcf80f48c9979e">ResistGravity</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  frc::VictorSP m_Motor{TELESCOPIC_ARM_MOTOR};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  frc::DutyCycleEncoder m_Encoder{TELESCOPIC_ARM_ENCODER};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_telescopic_arm_html_aa1900de7062644bf083eb398601d58bf"><div class="ttname"><a href="class_telescopic_arm.html#aa1900de7062644bf083eb398601d58bf">TelescopicArm::TelescopicArm</a></div><div class="ttdeci">TelescopicArm()</div><div class="ttdoc">Construct a new Telescopic Arm object.</div></div>
-<div class="ttc" id="aclass_telescopic_arm_html"><div class="ttname"><a href="class_telescopic_arm.html">TelescopicArm</a></div><div class="ttdef"><b>Definition:</b> TelescopicArm.h:16</div></div>
+<div class="ttc" id="aclass_telescopic_arm_html"><div class="ttname"><a href="class_telescopic_arm.html">TelescopicArm</a></div><div class="ttdoc">The telescopic arm mechanism of the robot.</div><div class="ttdef"><b>Definition:</b> TelescopicArm.h:23</div></div>
 <div class="ttc" id="aclass_telescopic_arm_html_aa7f29ed657ad10e22f69a67afa5867d0"><div class="ttname"><a href="class_telescopic_arm.html#aa7f29ed657ad10e22f69a67afa5867d0">TelescopicArm::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the telescopic arm motor.</div></div>
 <div class="ttc" id="aclass_telescopic_arm_html_a57bb251235ad6c2c366c0f6d477fbaf6"><div class="ttname"><a href="class_telescopic_arm.html#a57bb251235ad6c2c366c0f6d477fbaf6">TelescopicArm::GetEncodeur</a></div><div class="ttdeci">double GetEncodeur()</div><div class="ttdoc">Get the position of the telescopic arm.</div></div>
 <div class="ttc" id="aclass_telescopic_arm_html_a857367b88c813789e49118ea69b99755"><div class="ttname"><a href="class_telescopic_arm.html#a857367b88c813789e49118ea69b99755">TelescopicArm::GoDown</a></div><div class="ttdeci">void GoDown()</div><div class="ttdoc">Lower the turret at a determined speed.</div></div>

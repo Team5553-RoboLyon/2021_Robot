@@ -69,6 +69,11 @@ $(function() {
 <div class="title">MoveTurret Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Move the turret to a specified angle.  
+ <a href="class_move_turret.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_move_turret_8h_source.html">MoveTurret.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MoveTurret:</div>
 <div class="dyncontent">
@@ -78,22 +83,181 @@ Inheritance diagram for MoveTurret:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e15fd733cf16aa95f3f81748b9d6f78"><td class="memItemLeft" align="right" valign="top"><a id="a9e15fd733cf16aa95f3f81748b9d6f78"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MoveTurret</b> (<a class="el" href="class_turret.html">Turret</a> *pturret, double angle)</td></tr>
+<tr class="memitem:a9e15fd733cf16aa95f3f81748b9d6f78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_turret.html#a9e15fd733cf16aa95f3f81748b9d6f78">MoveTurret</a> (<a class="el" href="class_turret.html">Turret</a> *pturret, double angle)</td></tr>
+<tr class="memdesc:a9e15fd733cf16aa95f3f81748b9d6f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Move <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object.  <a href="class_move_turret.html#a9e15fd733cf16aa95f3f81748b9d6f78">More...</a><br /></td></tr>
 <tr class="separator:a9e15fd733cf16aa95f3f81748b9d6f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88779fbe6bd8b8a4f69a7e86cca8de14"><td class="memItemLeft" align="right" valign="top"><a id="a88779fbe6bd8b8a4f69a7e86cca8de14"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> () override</td></tr>
+<tr class="memitem:a88779fbe6bd8b8a4f69a7e86cca8de14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_turret.html#a88779fbe6bd8b8a4f69a7e86cca8de14">Initialize</a> () override</td></tr>
+<tr class="memdesc:a88779fbe6bd8b8a4f69a7e86cca8de14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the PID control of the turret and set the new setpoint (aka the angle)  <a href="class_move_turret.html#a88779fbe6bd8b8a4f69a7e86cca8de14">More...</a><br /></td></tr>
 <tr class="separator:a88779fbe6bd8b8a4f69a7e86cca8de14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4189b96121897a67246d099df653db0a"><td class="memItemLeft" align="right" valign="top"><a id="a4189b96121897a67246d099df653db0a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Execute</b> () override</td></tr>
+<tr class="memitem:a4189b96121897a67246d099df653db0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_turret.html#a4189b96121897a67246d099df653db0a">Execute</a> () override</td></tr>
+<tr class="memdesc:a4189b96121897a67246d099df653db0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do nothing.  <a href="class_move_turret.html#a4189b96121897a67246d099df653db0a">More...</a><br /></td></tr>
 <tr class="separator:a4189b96121897a67246d099df653db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c85e97b49957bc949df060ce14dc6b"><td class="memItemLeft" align="right" valign="top"><a id="a55c85e97b49957bc949df060ce14dc6b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> (bool interrupted) override</td></tr>
+<tr class="memitem:a55c85e97b49957bc949df060ce14dc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_turret.html#a55c85e97b49957bc949df060ce14dc6b">End</a> (bool interrupted) override</td></tr>
+<tr class="memdesc:a55c85e97b49957bc949df060ce14dc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the PID control of the turret and stop its motor.  <a href="class_move_turret.html#a55c85e97b49957bc949df060ce14dc6b">More...</a><br /></td></tr>
 <tr class="separator:a55c85e97b49957bc949df060ce14dc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1058bc2f41bb6399e9d73896d9b8b1"><td class="memItemLeft" align="right" valign="top"><a id="aff1058bc2f41bb6399e9d73896d9b8b1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsFinished</b> () override</td></tr>
+<tr class="memitem:aff1058bc2f41bb6399e9d73896d9b8b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_move_turret.html#aff1058bc2f41bb6399e9d73896d9b8b1">IsFinished</a> () override</td></tr>
+<tr class="memdesc:aff1058bc2f41bb6399e9d73896d9b8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the turret has reached its setpoint.  <a href="class_move_turret.html#aff1058bc2f41bb6399e9d73896d9b8b1">More...</a><br /></td></tr>
 <tr class="separator:aff1058bc2f41bb6399e9d73896d9b8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Move the turret to a specified angle. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9e15fd733cf16aa95f3f81748b9d6f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e15fd733cf16aa95f3f81748b9d6f78">&#9670;&nbsp;</a></span>MoveTurret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MoveTurret::MoveTurret </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_turret.html">Turret</a> *&#160;</td>
+          <td class="paramname"><em>pturret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Move <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pturret</td><td>The turret subsystem of the robot </td></tr>
+    <tr><td class="paramname">angle</td><td>The angle to be reached by the turret </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a55c85e97b49957bc949df060ce14dc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55c85e97b49957bc949df060ce14dc6b">&#9670;&nbsp;</a></span>End()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MoveTurret::End </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>interrupted</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable the PID control of the turret and stop its motor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interrupted</td><td>whether the command was interrupted/canceled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4189b96121897a67246d099df653db0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4189b96121897a67246d099df653db0a">&#9670;&nbsp;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MoveTurret::Execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Do nothing. </p>
+
+</div>
+</div>
+<a id="a88779fbe6bd8b8a4f69a7e86cca8de14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88779fbe6bd8b8a4f69a7e86cca8de14">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MoveTurret::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the PID control of the turret and set the new setpoint (aka the angle) </p>
+
+</div>
+</div>
+<a id="aff1058bc2f41bb6399e9d73896d9b8b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1058bc2f41bb6399e9d73896d9b8b1">&#9670;&nbsp;</a></span>IsFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MoveTurret::IsFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return if the turret has reached its setpoint. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the turret has reached its setpoint </dd>
+<dd>
+false if the turret has not yet reached its setpoint </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/include/commands/scoring/<a class="el" href="_move_turret_8h_source.html">MoveTurret.h</a></li>
 </ul>

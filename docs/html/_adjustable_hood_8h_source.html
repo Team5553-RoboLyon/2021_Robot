@@ -85,38 +85,44 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Constants.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_adjustable_hood.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_adjustable_hood.html">AdjustableHood</a> : <span class="keyword">public</span> frc2::PIDSubsystem {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_adjustable_hood.html#a8e07ba1221c7d9706f750ff04d866171">AdjustableHood</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#ae83b67a3e4141e8b203512e0b48f9741">UseOutput</a>(<span class="keywordtype">double</span> output, <span class="keywordtype">double</span> setpoint) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_adjustable_hood.html#a05e33685634fe419bb3e3f7361695c69">GetMeasurement</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#addbaa44fa7ad41e5d11b1f92982b664f">SetClampedSetpoint</a>(<span class="keywordtype">double</span> setpoint);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#a722e975307c893d82392337139523762">ResetEncoder</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#aca8d90cd3e60e0ddc8621cba8f7a5fd0">GoUp</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#a177831afd0a2f92d4f9ce6c8508ed9db">GoDown</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#af84c848b78b90cd3dbb1ac3da90482d0">Unblock</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#aa0c9f5aef465c274b1a9e483abb97cbd">Stop</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_Motor{ADJUSTABLE_HOOD_MOTOR};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  frc::DutyCycleEncoder m_Encoder{ADJUSTABLE_HOOD_ENCODER};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">int</span> m_LockedCount = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">double</span> m_PrevVelocityError;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;constexpr <span class="keywordtype">double</span> ADJUSTABLE_HOOD_POSITION_CONVERSION_FACTOR = 360 * 18 / 34;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;constexpr <span class="keywordtype">double</span> ADJUSTABLE_HOOD_P_GAIN = 0.013;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;constexpr <span class="keywordtype">double</span> ADJUSTABLE_HOOD_I_GAIN = 0.00075;  <span class="comment">// 0.00175;//0.002;//0.0015;//0.001;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;constexpr <span class="keywordtype">double</span> ADJUSTABLE_HOOD_D_GAIN = 0.00025;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;constexpr <span class="keywordtype">double</span> ADJUSTABLE_HOOD_GRAVITY_GAIN = 0.05;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_adjustable_hood.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_adjustable_hood.html">AdjustableHood</a> : <span class="keyword">public</span> frc2::PIDSubsystem {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="class_adjustable_hood.html#a8e07ba1221c7d9706f750ff04d866171">AdjustableHood</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#ae83b67a3e4141e8b203512e0b48f9741">UseOutput</a>(<span class="keywordtype">double</span> output, <span class="keywordtype">double</span> setpoint) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="class_adjustable_hood.html#a05e33685634fe419bb3e3f7361695c69">GetMeasurement</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#addbaa44fa7ad41e5d11b1f92982b664f">SetClampedSetpoint</a>(<span class="keywordtype">double</span> setpoint);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#a722e975307c893d82392337139523762">ResetEncoder</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#aca8d90cd3e60e0ddc8621cba8f7a5fd0">GoUp</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#a177831afd0a2f92d4f9ce6c8508ed9db">GoDown</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#af84c848b78b90cd3dbb1ac3da90482d0">Unblock</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_adjustable_hood.html#aa0c9f5aef465c274b1a9e483abb97cbd">Stop</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  ctre::phoenix::motorcontrol::can::VictorSPX m_Motor{ADJUSTABLE_HOOD_MOTOR};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  frc::DutyCycleEncoder m_Encoder{ADJUSTABLE_HOOD_ENCODER};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> m_LockedCount = 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">double</span> m_PrevVelocityError;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_adjustable_hood_html_a8e07ba1221c7d9706f750ff04d866171"><div class="ttname"><a href="class_adjustable_hood.html#a8e07ba1221c7d9706f750ff04d866171">AdjustableHood::AdjustableHood</a></div><div class="ttdeci">AdjustableHood()</div><div class="ttdoc">Construct a new Adjustable Hood object.</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_a177831afd0a2f92d4f9ce6c8508ed9db"><div class="ttname"><a href="class_adjustable_hood.html#a177831afd0a2f92d4f9ce6c8508ed9db">AdjustableHood::GoDown</a></div><div class="ttdeci">void GoDown()</div><div class="ttdoc">Lower the hood at a determined speed.</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_a722e975307c893d82392337139523762"><div class="ttname"><a href="class_adjustable_hood.html#a722e975307c893d82392337139523762">AdjustableHood::ResetEncoder</a></div><div class="ttdeci">void ResetEncoder()</div><div class="ttdoc">Reset the adjustable hood encoder to zero.</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_a05e33685634fe419bb3e3f7361695c69"><div class="ttname"><a href="class_adjustable_hood.html#a05e33685634fe419bb3e3f7361695c69">AdjustableHood::GetMeasurement</a></div><div class="ttdeci">double GetMeasurement() override</div><div class="ttdoc">Get the adjustable hood angle in degrees.</div></div>
-<div class="ttc" id="aclass_adjustable_hood_html"><div class="ttname"><a href="class_adjustable_hood.html">AdjustableHood</a></div><div class="ttdef"><b>Definition:</b> AdjustableHood.h:16</div></div>
+<div class="ttc" id="aclass_adjustable_hood_html"><div class="ttname"><a href="class_adjustable_hood.html">AdjustableHood</a></div><div class="ttdoc">The adjustable hood mechanism of the robot.</div><div class="ttdef"><b>Definition:</b> AdjustableHood.h:26</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_aca8d90cd3e60e0ddc8621cba8f7a5fd0"><div class="ttname"><a href="class_adjustable_hood.html#aca8d90cd3e60e0ddc8621cba8f7a5fd0">AdjustableHood::GoUp</a></div><div class="ttdeci">void GoUp()</div><div class="ttdoc">Raise the hood at a determined speed.</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_addbaa44fa7ad41e5d11b1f92982b664f"><div class="ttname"><a href="class_adjustable_hood.html#addbaa44fa7ad41e5d11b1f92982b664f">AdjustableHood::SetClampedSetpoint</a></div><div class="ttdeci">void SetClampedSetpoint(double setpoint)</div><div class="ttdoc">Set the adjustable hood setpoint clamped within the acceptable angles.</div></div>
 <div class="ttc" id="aclass_adjustable_hood_html_af84c848b78b90cd3dbb1ac3da90482d0"><div class="ttname"><a href="class_adjustable_hood.html#af84c848b78b90cd3dbb1ac3da90482d0">AdjustableHood::Unblock</a></div><div class="ttdeci">void Unblock()</div><div class="ttdoc">Raise the hood at a greater speed than GoUp() to unblock it.</div></div>

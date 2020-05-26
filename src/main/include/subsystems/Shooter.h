@@ -13,8 +13,14 @@
 
 #include "Constants.h"
 
-#define TOTAL_CHARGE_TIME 1.5
+constexpr double SHOOTER_PREP_SHOOT_SPEED = 0.8;
+constexpr double SHOOTER_PREP_SHOOT_RAMP = 0.7;
+constexpr double SHOOTER_TOTAL_CHARGE_TIME = 1.5;
 
+/**
+ * @brief The shooter mechanism of the robot.
+ *
+ */
 class Shooter : public frc2::SubsystemBase {
  public:
   /**

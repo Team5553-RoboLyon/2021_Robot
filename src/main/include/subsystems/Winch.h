@@ -12,6 +12,13 @@
 
 #include "Constants.h"
 
+constexpr double WINCH_POSITION_CONVERSION_FACTOR = 1.0 / 311.0;
+constexpr double WINCH_SPEED = 0.9;
+
+/**
+ * @brief The winch mechanism of the robot.
+ *
+ */
 class Winch : public frc2::SubsystemBase {
  public:
   /**

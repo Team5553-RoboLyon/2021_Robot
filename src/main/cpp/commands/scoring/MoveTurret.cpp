@@ -15,7 +15,7 @@ MoveTurret::MoveTurret(Turret* pturret, double angle) : m_pTurret(pturret), m_An
 
 void MoveTurret::Initialize() {
   m_pTurret->Enable();
-  m_pTurret->SetSetpoint(m_Angle);
+  m_pTurret->SetClampedSetpoint(m_Angle);
 }
 
 void MoveTurret::Execute() {}

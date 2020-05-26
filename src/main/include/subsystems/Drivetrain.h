@@ -17,6 +17,15 @@
 #include "Constants.h"
 #include "lib/CSVLogFile.h"
 
+constexpr int DRIVETRAIN_ULTRASONIC_SIZE = 5;
+constexpr int DRIVETRAIN_ULTRASONIC_WARNING_THRESHOLD = 60;
+constexpr double DRIVETRAIN_OPEN_LOOP_RAMP_RATE = 0.72;
+constexpr double DRIVETRAIN_POSITION_CONVERSION_FACTOR = 42;
+
+/**
+ * @brief The drivetrain mechanism of the robot.
+ *
+ */
 class Drivetrain : public frc2::SubsystemBase {
  public:
   /**

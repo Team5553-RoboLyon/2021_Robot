@@ -69,6 +69,11 @@ $(function() {
 <div class="title">AdjustTurret Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Automatically adjust the turret with the powerport based on vision processing inputs.  
+ <a href="class_adjust_turret.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_adjust_turret_8h_source.html">AdjustTurret.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AdjustTurret:</div>
 <div class="dyncontent">
@@ -78,22 +83,178 @@ Inheritance diagram for AdjustTurret:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c0da35ede06c057fec7e7466a969f97"><td class="memItemLeft" align="right" valign="top"><a id="a8c0da35ede06c057fec7e7466a969f97"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AdjustTurret</b> (<a class="el" href="class_turret.html">Turret</a> *pturret)</td></tr>
+<tr class="memitem:a8c0da35ede06c057fec7e7466a969f97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adjust_turret.html#a8c0da35ede06c057fec7e7466a969f97">AdjustTurret</a> (<a class="el" href="class_turret.html">Turret</a> *pturret)</td></tr>
+<tr class="memdesc:a8c0da35ede06c057fec7e7466a969f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Adjust <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object.  <a href="class_adjust_turret.html#a8c0da35ede06c057fec7e7466a969f97">More...</a><br /></td></tr>
 <tr class="separator:a8c0da35ede06c057fec7e7466a969f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86cf7c2d5df0baf0997f9eec2276d557"><td class="memItemLeft" align="right" valign="top"><a id="a86cf7c2d5df0baf0997f9eec2276d557"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> () override</td></tr>
+<tr class="memitem:a86cf7c2d5df0baf0997f9eec2276d557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adjust_turret.html#a86cf7c2d5df0baf0997f9eec2276d557">Initialize</a> () override</td></tr>
+<tr class="memdesc:a86cf7c2d5df0baf0997f9eec2276d557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the automatic adjustment of the turret with the powerport.  <a href="class_adjust_turret.html#a86cf7c2d5df0baf0997f9eec2276d557">More...</a><br /></td></tr>
 <tr class="separator:a86cf7c2d5df0baf0997f9eec2276d557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0d2a587a6d1bb39899c43bb31867c2b"><td class="memItemLeft" align="right" valign="top"><a id="aa0d2a587a6d1bb39899c43bb31867c2b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Execute</b> () override</td></tr>
+<tr class="memitem:aa0d2a587a6d1bb39899c43bb31867c2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adjust_turret.html#aa0d2a587a6d1bb39899c43bb31867c2b">Execute</a> () override</td></tr>
+<tr class="memdesc:aa0d2a587a6d1bb39899c43bb31867c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do nothing.  <a href="class_adjust_turret.html#aa0d2a587a6d1bb39899c43bb31867c2b">More...</a><br /></td></tr>
 <tr class="separator:aa0d2a587a6d1bb39899c43bb31867c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b09c629ac2a49ada585e3151b7e3e53"><td class="memItemLeft" align="right" valign="top"><a id="a7b09c629ac2a49ada585e3151b7e3e53"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>End</b> (bool interrupted) override</td></tr>
+<tr class="memitem:a7b09c629ac2a49ada585e3151b7e3e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adjust_turret.html#a7b09c629ac2a49ada585e3151b7e3e53">End</a> (bool interrupted) override</td></tr>
+<tr class="memdesc:a7b09c629ac2a49ada585e3151b7e3e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the automatic adjustment of the turret with the powerport.  <a href="class_adjust_turret.html#a7b09c629ac2a49ada585e3151b7e3e53">More...</a><br /></td></tr>
 <tr class="separator:a7b09c629ac2a49ada585e3151b7e3e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a0acb42de6af6a36525c1a8c9ccfdfe"><td class="memItemLeft" align="right" valign="top"><a id="a2a0acb42de6af6a36525c1a8c9ccfdfe"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsFinished</b> () override</td></tr>
+<tr class="memitem:a2a0acb42de6af6a36525c1a8c9ccfdfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adjust_turret.html#a2a0acb42de6af6a36525c1a8c9ccfdfe">IsFinished</a> () override</td></tr>
+<tr class="memdesc:a2a0acb42de6af6a36525c1a8c9ccfdfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return false : this command has no finishing event.  <a href="class_adjust_turret.html#a2a0acb42de6af6a36525c1a8c9ccfdfe">More...</a><br /></td></tr>
 <tr class="separator:a2a0acb42de6af6a36525c1a8c9ccfdfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Automatically adjust the turret with the powerport based on vision processing inputs. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8c0da35ede06c057fec7e7466a969f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0da35ede06c057fec7e7466a969f97">&#9670;&nbsp;</a></span>AdjustTurret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdjustTurret::AdjustTurret </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_turret.html">Turret</a> *&#160;</td>
+          <td class="paramname"><em>pturret</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new Adjust <a class="el" href="class_turret.html" title="The turret mechanism of the robot.">Turret</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pturret</td><td>The turret subsystem of the robot </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b09c629ac2a49ada585e3151b7e3e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b09c629ac2a49ada585e3151b7e3e53">&#9670;&nbsp;</a></span>End()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdjustTurret::End </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>interrupted</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stop the automatic adjustment of the turret with the powerport. </p>
+<p>Call the <a class="el" href="class_turret.html#ada1d257a7fd6673862b4d7c0385407d7" title="Disable the automatic adjustment of the turret with the powerport.">Turret::DisableAutoAdjust()</a> method</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interrupted</td><td>whether the command was interrupted/canceled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa0d2a587a6d1bb39899c43bb31867c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d2a587a6d1bb39899c43bb31867c2b">&#9670;&nbsp;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdjustTurret::Execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Do nothing. </p>
+
+</div>
+</div>
+<a id="a86cf7c2d5df0baf0997f9eec2276d557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86cf7c2d5df0baf0997f9eec2276d557">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdjustTurret::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start the automatic adjustment of the turret with the powerport. </p>
+<p>Call the <a class="el" href="class_turret.html#a7e2cc8cb259a7ac767726a3ef46ad658" title="Enable the automatic adjustment of the turret with the powerport.">Turret::EnableAutoAdjust()</a> method </p>
+
+</div>
+</div>
+<a id="a2a0acb42de6af6a36525c1a8c9ccfdfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0acb42de6af6a36525c1a8c9ccfdfe">&#9670;&nbsp;</a></span>IsFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AdjustTurret::IsFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return false : this command has no finishing event. </p>
+<dl class="section return"><dt>Returns</dt><dd>false in every situation </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/include/commands/scoring/<a class="el" href="_adjust_turret_8h_source.html">AdjustTurret.h</a></li>
 </ul>

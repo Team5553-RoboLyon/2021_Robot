@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['unblock_142',['Unblock',['../class_adjustable_hood.html#af84c848b78b90cd3dbb1ac3da90482d0',1,'AdjustableHood::Unblock()'],['../class_feeder.html#a41851d7e8f5deb4a3fa1b4d8f39df702',1,'Feeder::UnBlock()']]],
-  ['useoutput_143',['UseOutput',['../class_adjustable_hood.html#ae83b67a3e4141e8b203512e0b48f9741',1,'AdjustableHood::UseOutput()'],['../class_turret.html#a56d18e7baf5478733a3a20aea26e65b9',1,'Turret::UseOutput()']]]
+  ['telescopicarm_152',['TelescopicArm',['../class_telescopic_arm.html#aa1900de7062644bf083eb398601d58bf',1,'TelescopicArm']]],
+  ['turnleft_153',['TurnLeft',['../class_turret.html#a7d27c323529a1c47f3816e850617b000',1,'Turret']]],
+  ['turnright_154',['TurnRight',['../class_turret.html#abd683a92204aa8fe9c80810cc3862322',1,'Turret']]],
+  ['turret_155',['Turret',['../class_turret.html#a716b97b5618cc59c9b095954f92fd47c',1,'Turret']]]
 ];

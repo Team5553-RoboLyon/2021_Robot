@@ -13,6 +13,16 @@
 
 #include "Constants.h"
 
+constexpr double ADJUSTABLE_HOOD_POSITION_CONVERSION_FACTOR = 360 * 18 / 34;
+constexpr double ADJUSTABLE_HOOD_P_GAIN = 0.013;
+constexpr double ADJUSTABLE_HOOD_I_GAIN = 0.00075;  // 0.00175;//0.002;//0.0015;//0.001;
+constexpr double ADJUSTABLE_HOOD_D_GAIN = 0.00025;
+constexpr double ADJUSTABLE_HOOD_GRAVITY_GAIN = 0.05;
+
+/**
+ * @brief The adjustable hood mechanism of the robot.
+ *
+ */
 class AdjustableHood : public frc2::PIDSubsystem {
  public:
   /**

@@ -85,34 +85,37 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Constants.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_intake.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_intake.html">Intake</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">enum class</span> IntakePosition { kOpened, kClosed };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="class_intake.html#a8d15418ed312a36eaac04f6ee45f58a9">Intake</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a090316f9b05032a39c56c3129145103f">Close</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#aff2ba39d28a45a797707c0c86b0adfbc">Open</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a12aee20c7e44e9d7ff13016d1113cd21">ChangePosition</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#acd9e28067ed5fba23279aa509a2c3dee">Activate</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a1250a271575e444201b1ac70be018031">Stop</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  IntakePosition m_Position;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  frc::DoubleSolenoid m_Solenoid{INTAKE_SOLENOID_A, INTAKE_SOLENOID_B};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  frc::VictorSP m_Motor{INTAKE_MOTOR};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;constexpr <span class="keywordtype">double</span> INTAKE_OPENED_SPEED = 0.6;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;constexpr <span class="keywordtype">double</span> INTAKE_CLOSED_SPEED = 0.2;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_intake.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_intake.html">Intake</a> : <span class="keyword">public</span> frc2::SubsystemBase {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">enum class</span> IntakePosition { kOpened, kClosed };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="class_intake.html#a8d15418ed312a36eaac04f6ee45f58a9">Intake</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a090316f9b05032a39c56c3129145103f">Close</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#aff2ba39d28a45a797707c0c86b0adfbc">Open</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a12aee20c7e44e9d7ff13016d1113cd21">ChangePosition</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#acd9e28067ed5fba23279aa509a2c3dee">Activate</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_intake.html#a1250a271575e444201b1ac70be018031">Stop</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  IntakePosition m_Position;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  frc::DoubleSolenoid m_Solenoid{INTAKE_SOLENOID_A, INTAKE_SOLENOID_B};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  frc::VictorSP m_Motor{INTAKE_MOTOR};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_intake_html_a1250a271575e444201b1ac70be018031"><div class="ttname"><a href="class_intake.html#a1250a271575e444201b1ac70be018031">Intake::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the intake motor.</div></div>
 <div class="ttc" id="aclass_intake_html_a12aee20c7e44e9d7ff13016d1113cd21"><div class="ttname"><a href="class_intake.html#a12aee20c7e44e9d7ff13016d1113cd21">Intake::ChangePosition</a></div><div class="ttdeci">void ChangePosition()</div><div class="ttdoc">Change the intake position Call Open() if it is closed and Close() if it is opened.</div></div>
 <div class="ttc" id="aclass_intake_html_a090316f9b05032a39c56c3129145103f"><div class="ttname"><a href="class_intake.html#a090316f9b05032a39c56c3129145103f">Intake::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdoc">Raise the intake which blocks it from catching power cells.</div></div>
 <div class="ttc" id="aclass_intake_html_a8d15418ed312a36eaac04f6ee45f58a9"><div class="ttname"><a href="class_intake.html#a8d15418ed312a36eaac04f6ee45f58a9">Intake::Intake</a></div><div class="ttdeci">Intake()</div><div class="ttdoc">Construct a new Intake object.</div></div>
 <div class="ttc" id="aclass_intake_html_aff2ba39d28a45a797707c0c86b0adfbc"><div class="ttname"><a href="class_intake.html#aff2ba39d28a45a797707c0c86b0adfbc">Intake::Open</a></div><div class="ttdeci">void Open()</div><div class="ttdoc">Lower the intake which allows it to catch power cells.</div></div>
-<div class="ttc" id="aclass_intake_html"><div class="ttname"><a href="class_intake.html">Intake</a></div><div class="ttdef"><b>Definition:</b> Intake.h:16</div></div>
+<div class="ttc" id="aclass_intake_html"><div class="ttname"><a href="class_intake.html">Intake</a></div><div class="ttdoc">The intake mechanism of the robot.</div><div class="ttdef"><b>Definition:</b> Intake.h:23</div></div>
 <div class="ttc" id="aclass_intake_html_acd9e28067ed5fba23279aa509a2c3dee"><div class="ttname"><a href="class_intake.html#acd9e28067ed5fba23279aa509a2c3dee">Intake::Activate</a></div><div class="ttdeci">void Activate()</div><div class="ttdoc">Turn the intake motor on The motor speed and direction depends of the intake position.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
