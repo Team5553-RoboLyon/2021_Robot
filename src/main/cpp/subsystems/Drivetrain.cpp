@@ -109,7 +109,7 @@ frc::SmartDashboard::PutNumber("Warning Level", m_WarningLevel);
 void Drivetrain::EnableLogFile(bool enable) {
   if (!m_IsLogFileEnabled && enable) {
     m_LogFile = new CSVLogFile("/media/logs/log", "Droite 1", "Droite 2", "Gauche 1", "Gauche 2",
-                               "Encodeur externe");
+                               "Droite externe", "Gauche externe");
   } else if (m_IsLogFileEnabled && !enable) {
     delete m_LogFile;
   }

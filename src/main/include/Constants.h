@@ -10,6 +10,7 @@
 #include <units/units.h>
 
 // ############### CAN IDs ###############
+// ##### NEO #####
 // Drivetrain
 constexpr int DRIVETRAIN_RIGHT_MOTOR_1 = 1;
 constexpr int DRIVETRAIN_RIGHT_MOTOR_2 = 4;
@@ -20,9 +21,10 @@ constexpr int DRIVETRAIN_LEFT_MOTOR_2 = 3;
 constexpr int WINCH_MOTOR = 5;
 
 // Shooter
-constexpr int SHOOTER_LEFT_MOTOR = 10;
-constexpr int SHOOTER_RIGHT_MOTOR = 9;
+constexpr int SHOOTER_LEFT_MOTOR = 6;
+constexpr int SHOOTER_RIGHT_MOTOR = 7;
 
+// ##### Victor SPX #####
 // Feeder
 constexpr int FEEDER_MOTOR = 7;
 

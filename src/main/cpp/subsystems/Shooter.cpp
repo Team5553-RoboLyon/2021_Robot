@@ -8,23 +8,21 @@
 #include "subsystems/Shooter.h"
 
 Shooter::Shooter() {
-  m_LeftMotor.Follow(m_RightMotor);
+  m_RightMotor.RestoreFactoryDefaults();
+  m_LeftMotor.RestoreFactoryDefaults();
+
   m_LeftMotor.SetInverted(true);
-  m_RightMotor.ConfigVoltageCompSaturation(12.5);
-  m_LeftMotor.ConfigVoltageCompSaturation(12.5);
-  m_RightMotor.EnableVoltageCompensation(true);
-  m_LeftMotor.EnableVoltageCompensation(true);
+  m_LeftMotor.Follow(m_RightMotor);
+
   m_Timer.Reset();
   m_Timer.Stop();
 }
 
-void Shooter::Shoot(double power) {
-  m_RightMotor.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, power);
-}
+void Shooter::Shoot(double power) { m_RightMotor.Set(power); }
 
 void Shooter::SetRamp(double seconds_from_neutral_to_full) {
-  m_RightMotor.ConfigOpenloopRamp(seconds_from_neutral_to_full);
-  m_LeftMotor.ConfigOpenloopRamp(seconds_from_neutral_to_full);
+  m_RightMotor.SetOpenLoopRampRate(seconds_from_neutral_to_full);
+  m_LeftMotor.SetOpenLoopRampRate(seconds_from_neutral_to_full);
 }
 
 double Shooter::GetTimer() { return m_Timer.Get(); }

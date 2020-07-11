@@ -7,9 +7,9 @@
 
 #pragma once
 
+#include <frc2/command/SubsystemBase.h>
 #include <frc/Encoder.h>
 #include <frc/I2C.h>
-#include <frc2/command/SubsystemBase.h>
 #include <rev/CANSparkMax.h>
 
 #include <wpi/math>

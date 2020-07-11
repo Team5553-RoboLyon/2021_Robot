@@ -21,11 +21,11 @@ void Robot::RobotPeriodic() { frc2::CommandScheduler::GetInstance().Run(); }
 
 void Robot::DisabledInit() {
   m_Container.m_Drivetrain.SetIdleMode(rev::CANSparkMax::IdleMode::kCoast);
-  // Remet à zéro le controlleur le PID ( dont le setpoint ) du volet
+  // Remet à zéro le controlleur le PID du volet
   m_Container.m_AdjustableHood.Disable();
 }
 
-void Robot::DisabledPeriodic() {}
+void Robot::DisabledPeriodic() { m_Container.m_Drivetrain.EnableLogFile(false); }
 
 void Robot::AutonomousInit() {
   m_Container.m_Intake.Close();
@@ -42,13 +42,18 @@ void Robot::AutonomousInit() {
 void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {
-  /*m_Container.m_intake.Close();
-  m_Container.m_drivetrain.SetIdleMode(rev::CANSparkMax::IdleMode::kBrake);
-  m_Container.m_adjustableHood.ResetEncoder();
-  m_Container.m_telescopicArm.ResetEncoder();*/
   if (m_pAutonomousCommand != nullptr) {
     m_pAutonomousCommand->Cancel();
     m_pAutonomousCommand = nullptr;
+  }
+
+  // m_Container.m_Drivetrain.EnableLogFile(true);
+
+  if (!m_Container.IsPlayingMatch()) {
+    m_Container.m_Intake.Close();
+    m_Container.m_Drivetrain.SetIdleMode(rev::CANSparkMax::IdleMode::kBrake);
+    m_Container.m_AdjustableHood.ResetEncoder();
+    m_Container.m_TelescopicArm.ResetEncoder();
   }
 }
 

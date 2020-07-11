@@ -35,15 +35,20 @@
 #include "commands/scoring/Shoot.h"
 
 RobotContainer::RobotContainer() {
+  frc::SendableRegistry::GetInstance().SetName(&m_AutoChooser, "Autonomous Chooser");
   m_AutoChooser.AddOption("Shoot + Reculer",
                           new SimpleAuto(&m_Shooter, &m_Turret, &m_AdjustableHood, &m_Feeder,
                                          &m_Intake, &m_Drivetrain));
-
   m_AutoChooser.AddOption("Shoot + TakeCells + Shoot",
                           new ComplexAuto(&m_Shooter, &m_Turret, &m_AdjustableHood, &m_Feeder,
                                           &m_Intake, &m_Drivetrain));
 
-  frc::Shuffleboard::GetTab("Autonomous").Add(m_AutoChooser);
+  frc::SendableRegistry::GetInstance().SetName(&m_IsPlayingMatchChooser, "Match configuration ?");
+  m_IsPlayingMatchChooser.AddOption("Yes : Do nothing on TeleopInit", true);
+  m_IsPlayingMatchChooser.AddOption("No : Reset encoders and close intake on TeleopInit", false);
+
+  frc::Shuffleboard::GetTab("Controls").Add(m_AutoChooser);
+  frc::Shuffleboard::GetTab("Controls").Add(m_IsPlayingMatchChooser);
 
   m_Drivetrain.SetDefaultCommand(
       Drive([this] { return -m_DriverController.GetY(frc::GenericHID::JoystickHand::kLeftHand); },
@@ -54,6 +59,8 @@ RobotContainer::RobotContainer() {
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() { return m_AutoChooser.GetSelected(); }
+
+bool RobotContainer::IsPlayingMatch() { return m_IsPlayingMatchChooser.GetSelected(); }
 
 void RobotContainer::ConfigureControls() {
   //########## Xbox Controller ##########

@@ -28,6 +28,7 @@ class RobotContainer {
   RobotContainer();
 
   frc2::Command* GetAutonomousCommand();
+  bool IsPlayingMatch();
 
   Drivetrain m_Drivetrain;
   Feeder m_Feeder;
@@ -72,6 +73,7 @@ class RobotContainer {
       [this] { return frc::DriverStation::GetInstance().GetMatchTime() < 40; }};
 
   frc::SendableChooser<frc2::Command*> m_AutoChooser;
+  frc::SendableChooser<bool> m_IsPlayingMatchChooser;
 
   void ConfigureControls();
   void ConfigureTestControls();
